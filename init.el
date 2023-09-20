@@ -253,7 +253,7 @@
   :commands lsp)
 
 ;https://emacs-lsp.github.io/lsp-java/#quick-start
-(require 'lsp-java-boot)
+;(require 'lsp-java-boot)
 ;(use-package lsp-java :config (add-hook 'java-mode-hook 'lsp))
 
 
