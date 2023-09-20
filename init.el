@@ -295,7 +295,9 @@
 ;    :config (dolist (face '(mode-line mode-line-inactive))
 ;			  (setf (alist-get face solaire-mode-remap-modeline) nil))
 
-(use-package flycheck)
+(use-package flycheck
+  :config
+  (global-flycheck-mode))
 (use-package beacon
   :init
   (beacon-mode t))
