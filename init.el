@@ -76,7 +76,6 @@
         use-package-expand-minimally t))
 
 (use-package swiper
-  :ensure t
   :bind ("C-s" . 'swiper))
 
 (use-package zenburn-theme)
@@ -95,14 +94,12 @@
   (ido-ubiquitous-mode 1)
 
 (use-package ido-vertical-mode
-  :ensure t
   :init
   (ido-vertical-mode 1))
 (setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
 
 
 (use-package treemacs
-  :ensure t
   :defer t
   :init
   (with-eval-after-load 'winum
@@ -191,16 +188,13 @@
         ("C-x t M-t" . treemacs-find-tag)))
 
 (use-package treemacs-projectile
-  :after (treemacs projectile)
-  :ensure t)
+  :after (treemacs projectile))
 
 (use-package treemacs-magit
-  :after (treemacs magit)
-  :ensure t)
+  :after (treemacs magit))
 
 ;;; copypasted from witchmacs
 (use-package switch-window
-      :ensure t
       :config
       (setq switch-window-input-style 'minibuffer)
       (setq switch-window-increase 4)
@@ -211,11 +205,9 @@
       :bind
       ([remap other-window] . switch-window))
 
-(use-package undo-tree
-  :ensure t)
+(use-package undo-tree)
 
 (use-package powerline
-      :ensure t
       :init
       (powerline-default-theme)
       :hook
