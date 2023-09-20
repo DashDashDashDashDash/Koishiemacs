@@ -301,4 +301,5 @@
   (diminish 'eldoc-mode)
   (diminish 'flycheck-mode)
   (diminish 'company-mode)
-  (diminish 'abbrev-mode))
+  (diminish 'abbrev-mode)
+  (diminish 'auto-revert-mode))
