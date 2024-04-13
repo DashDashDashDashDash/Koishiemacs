@@ -296,6 +296,10 @@
   :init
   (beacon-mode t))
 
+(use-package move-text
+  :config
+  (move-text-default-bindings))
+
 ; adding modes as i go
 (use-package diminish
   :config
