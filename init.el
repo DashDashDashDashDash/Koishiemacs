@@ -237,23 +237,15 @@
   :config
   (setq lsp-modeline-diagnostics-enable t)
 ;  (setq lsp-idle-delay 0.1)
-  :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (java-mode . lsp)
-		 (c-mode . lsp)
-		 (c++-mode . lsp)
+  :hook (
+		 (prog-mode . lsp)
 		;(XXX-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
 
-;https://emacs-lsp.github.io/lsp-java/#quick-start
-;(require 'lsp-java-boot)
-;(use-package lsp-java :config (add-hook 'java-mode-hook 'lsp))
-
-
 ;; to enable the lenses
 (add-hook 'lsp-mode-hook #'lsp-lens-mode)
-(add-hook 'java-mode-hook #'lsp-java-boot-lens-mode)
 
 ;; optionally
 (use-package lsp-ui :commands lsp-ui-mode
@@ -274,8 +266,6 @@
 (use-package dap-mode
   :config
   (require 'dap-cpptools))
-;(use-package dap-java)
-;prolly isn't necessary
 ;(require 'dap-gdb-lldb);;  (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 ;; optional if you want which-key integration
