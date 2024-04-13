@@ -1,7 +1,9 @@
 (add-to-list 'default-frame-alist '(height . 50))
 (add-to-list 'default-frame-alist '(width . 160))
 
-(setq custom-file "~/.emacs.d/custom.el")
+(defconst custom-file (expand-file-name "custom.el" user-emacs-directory))
+(unless (file-exists-p custom-file)
+  (write-region "" nil custom-file))
 
 (load "~/.emacs.d/custom.el")
 
