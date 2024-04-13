@@ -300,6 +300,11 @@
   :config
   (move-text-default-bindings))
 
+(customize-set-variable
+  'tramp-ssh-controlmaster-options
+  (concat
+    "-o ControlPath=/tmp/%%C"))
+
 ; adding modes as i go
 (use-package diminish
   :config
