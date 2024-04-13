@@ -307,6 +307,7 @@
 
 ; adding modes as i go
 (use-package diminish
+  :ensure t
   :config
   (diminish 'which-key-mode)
   (diminish 'eldoc-mode)
