@@ -8,6 +8,11 @@ My mindset when tinkering about and finding out was that I wanted something that
 
 Some settings are bound to change, since I still haven't used the editor long enough.
 
+## Use
+```sh
+git clone https://github.com/DashDashDashDashDash/Koishimacs/ ~/.emacs.d
+```
+
 ## Main ~~features~~ differences
 
 - Cua mode
