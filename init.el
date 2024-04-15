@@ -304,4 +304,5 @@
   (diminish 'flycheck-mode)
   (diminish 'company-mode)
   (diminish 'abbrev-mode)
-  (diminish 'auto-revert-mode))
+  (diminish 'auto-revert-mode)
+  (diminish 'beacon-mode))
