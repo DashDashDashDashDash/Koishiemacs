@@ -84,6 +84,11 @@
   (diminish 'abbrev-mode)
   (diminish 'auto-revert-mode))
 
+(use-package ivy
+  :diminish ivy-mode
+  :init
+  (ivy-mode t))
+
 (use-package swiper
   :bind ("C-s" . 'swiper))
 
