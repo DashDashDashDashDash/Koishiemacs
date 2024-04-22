@@ -90,23 +90,11 @@
 (use-package zenburn-theme)
 (load-theme 'zenburn t)
 
-(use-package ido
+(use-package projectile
   :init
-  (ido-mode 1)
+  (projectile-mode t)
   :config
-  (setq ido-enable-flex-matching nil)
-  (setq ido-create-new-buffer 'always)
-  (setq ido-everywhere t))
-
-(use-package ido-completing-read+)
-  :init
-  (ido-ubiquitous-mode 1)
-
-(use-package ido-vertical-mode
-  :init
-  (ido-vertical-mode 1))
-(setq ido-vertical-define-keys 'C-n-C-p-up-and-down)
-
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 (use-package treemacs
   :defer t
