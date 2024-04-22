@@ -77,6 +77,12 @@
 (setq use-package-always-ensure t
       use-package-expand-minimally t)
 
+(use-package diminish
+  :config
+  (diminish 'eldoc-mode)
+  (diminish 'abbrev-mode)
+  (diminish 'auto-revert-mode))
+
 (use-package swiper
   :bind ("C-s" . 'swiper))
 
@@ -217,6 +223,7 @@
 
 ;;; copypasted from witchmacs
 (use-package company
+  :diminish company-mode
   :config
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 1)
@@ -270,8 +277,9 @@
 
 ;; optional if you want which-key integration
 (use-package which-key
-    :config
-    (which-key-mode))
+  :diminish which-key-mode
+  :config
+  (which-key-mode))
 ;;;
 
 (use-package solaire-mode)
@@ -280,9 +288,11 @@
 ;			  (setf (alist-get face solaire-mode-remap-modeline) nil))
 
 (use-package flycheck
+  :diminish flycheck-mode
   :config
   (global-flycheck-mode))
 (use-package beacon
+  :diminish beacon-mode
   :init
   (beacon-mode t))
 
@@ -294,15 +304,3 @@
   'tramp-ssh-controlmaster-options
   (concat
     "-o ControlPath=/tmp/%%C"))
-
-; adding modes as i go
-(use-package diminish
-  :ensure t
-  :config
-  (diminish 'which-key-mode)
-  (diminish 'eldoc-mode)
-  (diminish 'flycheck-mode)
-  (diminish 'company-mode)
-  (diminish 'abbrev-mode)
-  (diminish 'auto-revert-mode)
-  (diminish 'beacon-mode))
