@@ -74,6 +74,7 @@
   (package-install 'use-package))
 (unless (package-installed-p 'swiper)
   (package-refresh-contents))
+(require 'use-package-ensure)
 (setq use-package-always-ensure t
       use-package-expand-minimally t)
 
