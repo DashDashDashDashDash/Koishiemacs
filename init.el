@@ -91,6 +91,7 @@
 (load-theme 'zenburn t)
 
 (use-package projectile
+  :diminish projectile-mode
   :init
   (projectile-mode t)
   :config
