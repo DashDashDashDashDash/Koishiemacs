@@ -239,7 +239,7 @@
   (define-key company-active-map (kbd "C-p") #'company-select-previous)
   (define-key company-active-map (kbd "SPC") #'company-abort)
   :hook
-  ('after-init-hook) 'global-company-mode)
+  (prog-mode . company-mode))
 
 
 ;;; copypasted from lsp-mode's installation page
