@@ -103,6 +103,12 @@
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
 (use-package treemacs
+  :functions
+    treemacs-follow-mode
+	treemacs-fringe-indicator-mode
+	treemacs-filewatch-mode
+	treemacs-git-mode
+	treemacs-hide-gitignored-files-mode
   :defer t
   :init
   (with-eval-after-load 'winum
@@ -219,6 +225,10 @@
 
 ;;; copypasted from witchmacs
 (use-package company
+  :functions
+    company-select-next
+	company-select-previous
+    company-abort
   :diminish company-mode
   :config
   (setq company-idle-delay 0)
@@ -252,6 +262,9 @@
 
 ;; optionally
 (use-package lsp-ui :commands lsp-ui-mode
+  :functions
+    lsp-ui-peek-find-definitions
+	lsp-ui-peek-find-references
   :config
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
