@@ -210,11 +210,12 @@
 
 (use-package undo-tree)
 
-(use-package powerline
-      :init
-      (powerline-default-theme)
-      :hook
-      ('after-init-hook) . 'powerline-reset)
+(use-package nerd-icons
+  :config
+  (nerd-icons-install-fonts t))
+
+(use-package doom-modeline
+  :hook (after-init . doom-modeline-mode))
 
 ;;; copypasted from witchmacs
 (use-package company
