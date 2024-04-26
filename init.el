@@ -322,8 +322,7 @@
   (which-key-mode))
 ;;;
 
-(use-package solaire-mode)
-(solaire-global-mode t)
+
 ;    :config (dolist (face '(mode-line mode-line-inactive))
 ;			  (setf (alist-get face solaire-mode-remap-modeline) nil))
 
@@ -342,6 +341,35 @@
 (use-package move-text
   :config
   (move-text-default-bindings))
+
+(use-package page-break-lines)
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook)
+	(setq dashboard-projects-backend 'projectile)
+	(setq dashboard-banner-logo-title "Welcome to Koishiemacs")
+	(setq dashboard-image-banner-max-height 500)
+	(setq dashboard-startup-banner "~/.emacs.d/koishi.png")
+	(setq dashboard-vertically-center-content t)
+	(setq dashboard-startupify-list '(dashboard-insert-newline
+																		dashboard-insert-banner-title
+																		dashboard-insert-newline
+																		dashboard-insert-init-info
+																		dashboard-insert-items
+																		dashboard-insert-banner))
+	(setq dashboard-items '((projects  . 5)
+													(recents   . 3))))
+;                         (bookmarks . 5)
+;                         (projects  . 5)
+;                         (agenda    . 5)
+
+
+
+(use-package solaire-mode
+	:config
+	(solaire-global-mode t)
+	(add-hook 'dashboard-mode-hook (lambda () (solaire-mode 0))))
+
 
 (customize-set-variable
   'tramp-ssh-controlmaster-options
