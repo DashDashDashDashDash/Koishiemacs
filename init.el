@@ -132,6 +132,9 @@
   (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240]
       nil nil 'bottom))
 
+(use-package avy
+	:bind ("C-:" . 'avy-goto-char))
+
 (use-package treemacs
   :functions
     treemacs-follow-mode
