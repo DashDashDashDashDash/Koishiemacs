@@ -230,9 +230,12 @@
 
 (use-package undo-tree)
 
+(defconst nerd-font-installed (expand-file-name "nerd" user-emacs-directory))
 (use-package nerd-icons
   :config
-  (nerd-icons-install-fonts t))
+  (unless (file-exists-p nerd-font-installed)
+	(nerd-icons-install-fonts t)
+	(write-region "" nil nerd-font-installed)))
 
 (use-package doom-modeline
   :hook (after-init . doom-modeline-mode))
