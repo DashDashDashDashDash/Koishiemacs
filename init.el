@@ -91,6 +91,10 @@
   :init
   (ivy-mode t))
 
+(use-package counsel
+	:config
+	(counsel-mode t))
+
 (use-package swiper
   :bind ("C-s" . 'swiper))
 
