@@ -9,6 +9,8 @@
 
 (setq warning-minimum-level :error)
 
+(setq gc-cons-threshold 134217728)
+
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
 
