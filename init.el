@@ -104,6 +104,12 @@
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
+(use-package magit)
+
+(use-package diff-hl
+  :hook (magit-pre-refresh-hook . diff-hl-magit-pre-refresh)
+  :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh))
+
 (use-package treemacs
   :functions
     treemacs-follow-mode
