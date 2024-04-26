@@ -372,6 +372,12 @@
 	(solaire-global-mode t)
 	(add-hook 'dashboard-mode-hook (lambda () (solaire-mode 0))))
 
+(use-package emojify
+	:config
+	(global-emojify-mode-line-mode)
+	:hook (after-init . global-emojify-mode))
+
+(use-package rainbow-mode)
 
 (customize-set-variable
   'tramp-ssh-controlmaster-options
