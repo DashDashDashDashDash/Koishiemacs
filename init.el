@@ -18,6 +18,8 @@
 
 (setq x-select-enable-clipboard t)
 
+(save-place-mode t)
+
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
