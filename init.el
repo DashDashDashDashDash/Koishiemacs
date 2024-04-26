@@ -106,9 +106,15 @@
 
 (use-package magit)
 
-(use-package diff-hl
-  :hook (magit-pre-refresh-hook . diff-hl-magit-pre-refresh)
-  :hook (magit-post-refresh-hook . diff-hl-magit-post-refresh))
+(use-package git-gutter-fringe
+  :config
+  (global-git-gutter-mode)
+  (define-fringe-bitmap 'git-gutter-fr:added [224]
+      nil nil '(center repeated))
+  (define-fringe-bitmap 'git-gutter-fr:modified [224]
+      nil nil '(center repeated))
+  (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240]
+      nil nil 'bottom))
 
 (use-package treemacs
   :functions
@@ -307,6 +313,9 @@
 (use-package flycheck
   :diminish flycheck-mode
   :config
+  (setq flycheck-indication-mode 'right-fringe)
+  (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
+      [16 48 112 240 112 48 16] nil nil 'center)
   (global-flycheck-mode))
 (use-package beacon
   :diminish beacon-mode
