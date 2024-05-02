@@ -82,14 +82,7 @@
 (setq use-package-always-ensure t
       use-package-expand-minimally t)
 
-(use-package diminish
-  :config
-  (diminish 'eldoc-mode)
-  (diminish 'abbrev-mode)
-  (diminish 'auto-revert-mode))
-
 (use-package ivy
-  :diminish ivy-mode
   :init
   (ivy-mode t))
 
@@ -120,7 +113,6 @@
   (doom-themes-org-config))
 
 (use-package projectile
-  :diminish projectile-mode
   :init
   (projectile-mode t)
   :config
@@ -271,7 +263,6 @@
     company-select-next
 	company-select-previous
     company-abort
-  :diminish company-mode
   :config
   (setq company-idle-delay 0)
   (setq company-minimum-prefix-length 1)
@@ -328,7 +319,6 @@
 
 ;; optional if you want which-key integration
 (use-package which-key
-  :diminish which-key-mode
   :config
   (which-key-mode))
 ;;;
@@ -338,14 +328,12 @@
 ;			  (setf (alist-get face solaire-mode-remap-modeline) nil))
 
 (use-package flycheck
-  :diminish flycheck-mode
   :config
   (setq flycheck-indication-mode 'right-fringe)
   (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
       [16 48 112 240 112 48 16] nil nil 'center)
   (global-flycheck-mode))
 (use-package beacon
-  :diminish beacon-mode
   :init
   (beacon-mode t))
 
