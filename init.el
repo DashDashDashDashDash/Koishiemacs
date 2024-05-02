@@ -345,7 +345,7 @@
   (dashboard-setup-startup-hook)
 	(setq dashboard-projects-backend 'projectile)
 	(setq dashboard-banner-logo-title "Welcome to Koishiemacs")
-	(setq dashboard-image-banner-max-height 500)
+	(setq dashboard-image-banner-max-height 450)
 	(setq dashboard-startup-banner "~/.emacs.d/koishi.png")
 	(setq dashboard-vertically-center-content t)
 	(setq dashboard-startupify-list '(dashboard-insert-newline

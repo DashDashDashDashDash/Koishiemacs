@@ -19,7 +19,7 @@ git clone https://github.com/DashDashDashDashDash/Koishimacs/ ~/.emacs.d
 
 If you're using smaller fonts, or if you're on a smaller screen, you might want to change the dashboard banner image's max height. To do so, just edit the following line... 
 ```elisp
-(setq dashboard-image-banner-max-height 500) ; ...to 300, maybe
+(setq dashboard-image-banner-max-height 450) ; ...to 300, maybe
 ```
 
 ---
