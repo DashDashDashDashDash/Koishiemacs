@@ -309,8 +309,6 @@
   :init
   (lsp-treemacs-sync-mode 1))
 
-(require 'lsp-ido)
-
 ;; optionally if you want to use debugger
 (use-package dap-mode
   :config
