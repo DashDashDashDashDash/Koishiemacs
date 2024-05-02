@@ -372,7 +372,8 @@
 	(global-emojify-mode-line-mode)
 	:hook (after-init . global-emojify-mode))
 
-(use-package rainbow-mode)
+(use-package rainbow-mode
+  :hook (css-mode . rainbow-mode))
 
 (customize-set-variable
   'tramp-ssh-controlmaster-options
