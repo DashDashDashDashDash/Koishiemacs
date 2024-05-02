@@ -49,6 +49,12 @@
                             ))
 (electric-pair-mode t)
 
+(customize-set-variable
+  'tramp-ssh-controlmaster-options
+  (concat
+    "-o ControlPath=/tmp/%%C"))
+
+
 (defun split-and-follow-horizontally ()
       (interactive)
       (split-window-below)
@@ -386,8 +392,3 @@
 
 (use-package rainbow-mode
   :hook (css-mode . rainbow-mode))
-
-(customize-set-variable
-  'tramp-ssh-controlmaster-options
-  (concat
-    "-o ControlPath=/tmp/%%C"))
