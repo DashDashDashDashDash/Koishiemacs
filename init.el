@@ -126,7 +126,9 @@
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
-(use-package magit)
+(use-package magit
+  :config
+  (setq magit-diff-hide-trailing-cr-characters t))
 
 (use-package git-gutter-fringe
   :config
