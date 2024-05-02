@@ -245,7 +245,10 @@
       :bind
       ([remap other-window] . switch-window))
 
-(use-package undo-tree)
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode t)
+  (setq undo-tree-auto-save-history t))
 
 (defconst nerd-font-installed (expand-file-name "nerd" user-emacs-directory))
 (use-package nerd-icons
