@@ -133,6 +133,33 @@
 (use-package avy
 	:bind ("C-:" . 'avy-goto-char))
 
+;;; copypasted from witchmacs
+(use-package switch-window
+      :config
+      (setq switch-window-input-style 'minibuffer)
+      (setq switch-window-increase 4)
+      (setq switch-window-threshold 2)
+      (setq switch-window-shortcut-style 'qwerty)
+      (setq switch-window-qwerty-shortcuts
+		'("a" "s" "d" "f" "j" "k" "l"))
+      :bind
+      ([remap other-window] . switch-window))
+
+(use-package undo-tree
+  :config
+  (global-undo-tree-mode t)
+  (setq undo-tree-auto-save-history t))
+
+(defconst nerd-font-installed (expand-file-name "nerd" user-emacs-directory))
+(use-package nerd-icons
+  :config
+  (unless (file-exists-p nerd-font-installed)
+	(nerd-icons-install-fonts t)
+	(write-region "" nil nerd-font-installed)))
+
+(use-package doom-modeline
+  :hook (after-init . doom-modeline-mode))
+
 (use-package treemacs
   :functions
     treemacs-follow-mode
@@ -233,32 +260,9 @@
 (use-package treemacs-magit
   :after (treemacs magit))
 
-;;; copypasted from witchmacs
-(use-package switch-window
-      :config
-      (setq switch-window-input-style 'minibuffer)
-      (setq switch-window-increase 4)
-      (setq switch-window-threshold 2)
-      (setq switch-window-shortcut-style 'qwerty)
-      (setq switch-window-qwerty-shortcuts
-		'("a" "s" "d" "f" "j" "k" "l"))
-      :bind
-      ([remap other-window] . switch-window))
-
-(use-package undo-tree
+(use-package treemacs-nerd-icons
   :config
-  (global-undo-tree-mode t)
-  (setq undo-tree-auto-save-history t))
-
-(defconst nerd-font-installed (expand-file-name "nerd" user-emacs-directory))
-(use-package nerd-icons
-  :config
-  (unless (file-exists-p nerd-font-installed)
-	(nerd-icons-install-fonts t)
-	(write-region "" nil nerd-font-installed)))
-
-(use-package doom-modeline
-  :hook (after-init . doom-modeline-mode))
+  (treemacs-load-theme "nerd-icons"))
 
 ;;; copypasted from witchmacs
 (use-package company
