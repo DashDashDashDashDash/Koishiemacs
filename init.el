@@ -25,6 +25,8 @@
 
 (setq scroll-conservatively 100)
 
+(setq split-width-threshold 90)
+
 (setq ring-bell-function 'ignore)
 
 (tool-bar-mode -1)
