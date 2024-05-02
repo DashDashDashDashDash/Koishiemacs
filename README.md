@@ -57,6 +57,7 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - `switch-window`: `C-x o` brings a hotkey for each window if you have over 2 windows open in the same frame
 - `undo-tree`: treat undo history as a tree. check it out with `C-x u`
 - `nerd-icons`: for compatibility with doom-modeline below
+- `nerd-icons-dired`: use icons on dired (`C-x d`)
 - `doom-modeline`: doom emacs' modeline
 - `treemacs`: a tree view of a directory in emacs
 - `company`: autocompletion inside buffers

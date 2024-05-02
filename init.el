@@ -158,6 +158,9 @@
 	(nerd-icons-install-fonts t)
 	(write-region "" nil nerd-font-installed)))
 
+(use-package nerd-icons-dired
+  :hook (dired-mode . nerd-icons-dired-mode))
+
 (use-package doom-modeline
   :hook (after-init . doom-modeline-mode))
 
