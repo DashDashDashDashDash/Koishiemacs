@@ -339,7 +339,8 @@
   :config
   (move-text-default-bindings))
 
-(use-package page-break-lines)
+(use-package page-break-lines
+  :hook (dashboard-mode . page-break-lines-mode))
 (use-package dashboard
   :config
   (dashboard-setup-startup-hook)
