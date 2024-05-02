@@ -371,13 +371,13 @@
 	(setq dashboard-startup-banner "~/.emacs.d/koishi.png")
 	(setq dashboard-vertically-center-content t)
 	(setq dashboard-startupify-list '(dashboard-insert-newline
-																		dashboard-insert-banner-title
-																		dashboard-insert-newline
-																		dashboard-insert-init-info
-																		dashboard-insert-items
-																		dashboard-insert-banner))
+									  dashboard-insert-banner-title
+									  dashboard-insert-newline
+									  dashboard-insert-init-info
+									  dashboard-insert-items
+									  dashboard-insert-banner))
 	(setq dashboard-items '((projects  . 5)
-													(recents   . 3))))
+							(recents   . 3))))
 ;                         (bookmarks . 5)
 ;                         (projects  . 5)
 ;                         (agenda    . 5)
