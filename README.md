@@ -31,7 +31,7 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - Cua mode
 - Doom Emacs' `doom-material` [theme](https://github.com/doomemacs/themes) and `doom-modeline`
 - Native Emacs tabs
-- LSP via `lsp-mode`
+- LSP via `lsp-mode`, with support for `emacs-lsp-booster`
 - Autostart at 160x50
 - Separate custom.el
 
