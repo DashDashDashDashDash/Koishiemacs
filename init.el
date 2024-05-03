@@ -5,8 +5,6 @@
 (unless (file-exists-p custom-file)
   (write-region "" nil custom-file))
 
-(load "~/.emacs.d/custom.el")
-
 (setq warning-minimum-level :error)
 
 (setq gc-cons-threshold 134217728)
@@ -425,3 +423,5 @@
 
 (use-package rainbow-mode
   :hook (css-mode . rainbow-mode))
+
+(load "~/.emacs.d/custom.el")
