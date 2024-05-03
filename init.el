@@ -336,8 +336,8 @@
 
 ;; optionally if you want to use debugger
 (use-package dap-mode
-  :config
-  (require 'dap-cpptools))
+  :custom
+  (dap-auto-configure-mode t))
 ;(require 'dap-gdb-lldb);;  (use-package dap-LANGUAGE) to load the dap adapter for your language
 
 ;; optional if you want which-key integration
