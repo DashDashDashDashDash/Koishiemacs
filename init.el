@@ -295,6 +295,10 @@
   :hook
   (prog-mode . company-mode))
 
+(use-package yasnippet-snippets)
+(use-package yasnippet
+  :config (yas-global-mode 1)
+  :bind ("C-c y" . 'company-yasnippet))
 
 ;;; copypasted from lsp-mode's installation page
 (use-package lsp-mode

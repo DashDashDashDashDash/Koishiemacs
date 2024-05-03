@@ -61,6 +61,7 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - `doom-modeline`: doom emacs' modeline
 - `treemacs`: a tree view of a directory in emacs
 - `company`: autocompletion inside buffers
+- `yasnippet`(`-snippets`): code snippets, bound to company with `C-c y`
 - `lsp-*`: language server protocol -- turns emacs into a recognizable ide
 - `dap-mode`: debugging, goes hand-in-hand with the lsp package above
 - `which-key`: hints at command combos in the minibuffer when you're in the middle of one
