@@ -77,6 +77,8 @@
 (setq cua-keep-region-after-copy t)
 (setq epg-pinentry-mode 'loopback)
 
+(setq apropos-do-all t)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
