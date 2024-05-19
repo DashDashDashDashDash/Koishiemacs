@@ -4,19 +4,16 @@
 ![](https://ptpimg.me/4x6m6h.png)
 ---
 
-This is just my emacs configuration file. It's only really meant for me to sync my config across places with relative ease.
+These are just my emacs configuration files. It's only really meant for me to sync my config across places with relative ease.
 
 My mindset when messing around was that I wanted something that didn't interrupt my windows habits, while keeping all of Emacs' goodies. Tested on Emacs 30.0.
 
 Some settings are bound to change, since I still haven't used the editor long enough.
 
-## Use
-```sh
-git clone https://github.com/DashDashDashDashDash/Koishimacs/ ~/.emacs.d
-```
-
 ## Installation
-
+```sh
+git clone https://github.com/DashDashDashDashDash/Koishiemacs/ ~/.emacs.d
+```
 You'll get prompted once, maybe twice, to install fonts for `emojify` and `nerd-icons`. On Windows, you must install the font `nerd-icons` drops manually.
 
 If you're using smaller fonts, or if you're on a smaller screen, you might want to change the dashboard banner image's max height. To do so, just edit the following line... 
