@@ -9,6 +9,8 @@
 
 (setq gc-cons-threshold 134217728)
 
+(set-language-environment "UTF-8")
+
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
 
