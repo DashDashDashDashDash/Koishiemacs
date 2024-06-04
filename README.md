@@ -47,7 +47,7 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - `ivy-posframe`: configured to make `M-x` appear in the center of the window
 - `doom-themes`: set to doom-material theme
   - also flashes the modeline on errors
-- `projectile`: project management, prefixed to `C-c p`
+- `projectile`(`-ripgrep`): project management, prefixed to `C-c p`, ripgrep by `C-c p s r`
 - `magit`: git if it was awesome
 - `git-gutter-fringe`: show details on lines added/modified/deleted on the left fringe of the buffer
 - `avy`: `C-:` to move cursor anywhere on the screen using hotkeys

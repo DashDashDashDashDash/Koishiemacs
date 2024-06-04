@@ -128,6 +128,8 @@
   :config
   (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
 
+(use-package projectile-ripgrep)
+
 (use-package magit
   :config
   (setq magit-diff-hide-trailing-cr-characters t))
