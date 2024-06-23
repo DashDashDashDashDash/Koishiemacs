@@ -126,7 +126,9 @@
   :init
   (projectile-mode t)
   :config
-  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map))
+  (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+  (setq projectile-indexing-method 'hybrid)
+  (setq projectile-sort-order 'recentf))
 
 (use-package projectile-ripgrep)
 
