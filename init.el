@@ -14,6 +14,11 @@
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
 
+(add-hook 'prog-mode-hook 'whitespace-mode)
+(setq whitespace-line-column 999) ; can't think of a sensible value to put in here yet
+(delete 'newline whitespace-style)
+(delete 'newline-mark whitespace-style)
+
 (show-paren-mode 1)
 
 (setq x-select-enable-clipboard t)
