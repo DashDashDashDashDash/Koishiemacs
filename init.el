@@ -56,7 +56,6 @@
   (concat
     "-o ControlPath=/tmp/%%C"))
 
-
 (defun split-and-follow-horizontally ()
       (interactive)
       (split-window-below)
@@ -387,9 +386,15 @@
   (define-fringe-bitmap 'flycheck-fringe-bitmap-double-arrow
       [16 48 112 240 112 48 16] nil nil 'center)
   (global-flycheck-mode))
+
 (use-package beacon
   :init
-  (beacon-mode t))
+  (beacon-mode t)
+  :config
+  (setq beacon-push-mark nil)
+  (setq beacon-size 15)
+  (setq beacon-blink-duration 0.1)
+  (setq beacon-blink-delay 0.1))
 
 (use-package move-text
   :config
