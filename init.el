@@ -32,7 +32,8 @@
 
 (setq scroll-conservatively 100)
 
-(setq split-width-threshold 90)
+(setq split-width-threshold 120)
+(setq split-height-threshold 80)
 
 (setq ring-bell-function 'ignore)
 
