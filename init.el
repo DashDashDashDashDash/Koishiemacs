@@ -30,7 +30,7 @@
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
-(setq scroll-conservatively 100)
+(setq scroll-conservatively 1000)
 
 (setq split-width-threshold 120)
 (setq split-height-threshold 80)
