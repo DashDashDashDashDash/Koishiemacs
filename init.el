@@ -16,8 +16,10 @@
 
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (setq whitespace-line-column 999) ; can't think of a sensible value to put in here yet
-(delete 'newline whitespace-style)
-(delete 'newline-mark whitespace-style)
+(eval-after-load 'whitespace
+  (lambda ()
+    (delete 'newline-mark whitespace-style)))
+
 
 (show-paren-mode 1)
 
