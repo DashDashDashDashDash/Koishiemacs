@@ -103,17 +103,17 @@
   (ivy-mode t))
 
 (use-package counsel
-	:config
-	(counsel-mode t))
+  :config
+  (counsel-mode t))
 
 (use-package swiper
   :bind ("C-s" . 'swiper))
 
 (use-package ivy-posframe
-	:config
-	(setq ivy-posframe-display-functions-alist
-				'((counsel-M-x . ivy-posframe-display-at-frame-center)))
-	(ivy-posframe-mode t))
+  :config
+  (setq ivy-posframe-display-functions-alist
+        '((counsel-M-x . ivy-posframe-display-at-frame-center)))
+  (ivy-posframe-mode t))
 
 (use-package doom-themes
   :ensure t
@@ -153,7 +153,7 @@
       nil nil 'bottom))
 
 (use-package avy
-	:bind ("C-:" . 'avy-goto-char))
+  :bind ("C-:" . 'avy-goto-char))
 
 ;;; copypasted from witchmacs
 (use-package switch-window
@@ -163,7 +163,7 @@
       (setq switch-window-threshold 2)
       (setq switch-window-shortcut-style 'qwerty)
       (setq switch-window-qwerty-shortcuts
-		'("a" "s" "d" "f" "j" "k" "l"))
+    '("a" "s" "d" "f" "j" "k" "l"))
       :bind
       ([remap other-window] . switch-window))
 
@@ -177,8 +177,8 @@
 (use-package nerd-icons
   :config
   (unless (file-exists-p nerd-font-installed)
-	(nerd-icons-install-fonts t)
-	(write-region "" nil nerd-font-installed)))
+  (nerd-icons-install-fonts t)
+  (write-region "" nil nerd-font-installed)))
 
 (use-package nerd-icons-dired
   :hook (dired-mode . nerd-icons-dired-mode))
@@ -189,10 +189,10 @@
 (use-package treemacs
   :functions
     treemacs-follow-mode
-	treemacs-fringe-indicator-mode
-	treemacs-filewatch-mode
-	treemacs-git-mode
-	treemacs-hide-gitignored-files-mode
+  treemacs-fringe-indicator-mode
+  treemacs-filewatch-mode
+  treemacs-git-mode
+  treemacs-hide-gitignored-files-mode
   :defer t
   :init
   (with-eval-after-load 'winum
@@ -294,7 +294,7 @@
 (use-package company
   :functions
     company-select-next
-	company-select-previous
+  company-select-previous
     company-abort
   :config
   (setq company-idle-delay 0)
@@ -321,8 +321,8 @@
   (setq lsp-modeline-diagnostics-enable t)
 ;  (setq lsp-idle-delay 0.1)
   :hook (
-		 (prog-mode . lsp)
-		;(XXX-mode . lsp)
+     (prog-mode . lsp)
+    ;(XXX-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :commands lsp)
@@ -334,7 +334,7 @@
 (use-package lsp-ui :commands lsp-ui-mode
   :functions
     lsp-ui-peek-find-definitions
-	lsp-ui-peek-find-references
+  lsp-ui-peek-find-references
   :config
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
@@ -412,19 +412,19 @@
 (use-package dashboard
   :config
   (dashboard-setup-startup-hook)
-	(setq dashboard-projects-backend 'projectile)
-	(setq dashboard-banner-logo-title "Welcome to Koishiemacs")
-	(setq dashboard-image-banner-max-height 450)
-	(setq dashboard-startup-banner "~/.emacs.d/koishi.png")
-	(setq dashboard-vertically-center-content t)
-	(setq dashboard-startupify-list '(dashboard-insert-newline
-									  dashboard-insert-banner-title
-									  dashboard-insert-newline
-									  dashboard-insert-init-info
-									  dashboard-insert-items
-									  dashboard-insert-banner))
-	(setq dashboard-items '((projects  . 5)
-							(recents   . 3))))
+  (setq dashboard-projects-backend 'projectile)
+  (setq dashboard-banner-logo-title "Welcome to Koishiemacs")
+  (setq dashboard-image-banner-max-height 450)
+  (setq dashboard-startup-banner "~/.emacs.d/koishi.png")
+  (setq dashboard-vertically-center-content t)
+  (setq dashboard-startupify-list '(dashboard-insert-newline
+                    dashboard-insert-banner-title
+                    dashboard-insert-newline
+                    dashboard-insert-init-info
+                    dashboard-insert-items
+                    dashboard-insert-banner))
+  (setq dashboard-items '((projects  . 5)
+              (recents   . 3))))
 ;                         (bookmarks . 5)
 ;                         (projects  . 5)
 ;                         (agenda    . 5)
@@ -432,14 +432,14 @@
 
 
 (use-package solaire-mode
-	:config
-	(solaire-global-mode t)
-	(add-hook 'dashboard-mode-hook (lambda () (solaire-mode 0))))
+  :config
+  (solaire-global-mode t)
+  (add-hook 'dashboard-mode-hook (lambda () (solaire-mode 0))))
 
 (use-package emojify
-	:config
-	(global-emojify-mode-line-mode)
-	:hook (after-init . global-emojify-mode))
+  :config
+  (global-emojify-mode-line-mode)
+  :hook (after-init . global-emojify-mode))
 
 (use-package rainbow-mode
   :hook (css-mode . rainbow-mode))
