@@ -185,7 +185,13 @@
   :hook (dired-mode . nerd-icons-dired-mode))
 
 (use-package doom-modeline
-  :hook (after-init . doom-modeline-mode))
+  :hook (after-init . doom-modeline-mode)
+  :config
+  (setq doom-modeline-height 20)
+  (setq doom-modeline-bar-width 2) ; square on default res... usually
+  (setq doom-modeline-hud t)
+  (setq doom-modeline-position-column-line-format "L%l C%c")
+  (setq doom-modeline-buffer-encoding nil))
 
 (use-package treemacs
   :functions
