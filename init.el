@@ -88,6 +88,8 @@
 
 (setq apropos-do-all t)
 
+(global-set-key (kbd "<mouse-movement>") 'ignore)
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
