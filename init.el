@@ -143,7 +143,8 @@
 
 (use-package magit
   :config
-  (setq magit-diff-hide-trailing-cr-characters t))
+  (setq magit-diff-hide-trailing-cr-characters t)
+  (setq git-commit-summary-max-length 50))
 
 (use-package git-gutter-fringe
   :config
