@@ -168,7 +168,7 @@
       (setq switch-window-threshold 2)
       (setq switch-window-shortcut-style 'qwerty)
       (setq switch-window-qwerty-shortcuts
-    '("a" "s" "d" "f" "j" "k" "l"))
+    '("a" "s" "d" "f" "z" "x" "c" "v"))
       :bind
       ([remap other-window] . switch-window))
 
