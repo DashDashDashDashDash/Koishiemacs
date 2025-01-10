@@ -450,6 +450,7 @@
 (use-package emojify
   :config
   (global-emojify-mode-line-mode)
+  (emojify-set-emoji-styles '(unicode github))
   :hook (after-init . global-emojify-mode))
 
 (use-package rainbow-mode
