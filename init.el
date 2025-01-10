@@ -455,4 +455,7 @@
 (use-package rainbow-mode
   :hook (css-mode . rainbow-mode))
 
+(use-package emmet-mode
+  :hook (mhtml-mode . emmet-mode))
+
 (load "~/.emacs.d/custom.el")
