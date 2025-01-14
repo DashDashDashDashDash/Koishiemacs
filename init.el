@@ -329,6 +329,7 @@
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-l")
   :config
+  (setq lsp-copilot-enabled nil)
   (setq lsp-modeline-diagnostics-enable t)
 ;  (setq lsp-idle-delay 0.1)
   :hook (
