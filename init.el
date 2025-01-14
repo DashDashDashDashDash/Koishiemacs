@@ -440,7 +440,8 @@
 ;                         (projects  . 5)
 ;                         (agenda    . 5)
 
-
+(use-package editorconfig
+  :config (editorconfig-mode 1))
 
 (use-package solaire-mode
   :config
