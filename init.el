@@ -199,6 +199,84 @@
   (setq doom-modeline-position-column-line-format '("L%l C%c"))
   (setq doom-modeline-buffer-encoding nil))
 
+;;; copypasted from lsp-mode's installation page
+(use-package lsp-mode
+  :init
+  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
+  (setq lsp-keymap-prefix "C-l")
+  :config
+  (setq lsp-copilot-enabled nil)
+  (setq lsp-modeline-diagnostics-enable t)
+;  (setq lsp-idle-delay 0.1)
+  :hook (
+     (prog-mode . lsp)
+    ;(XXX-mode . lsp)
+         ;; if you want which-key integration
+         (lsp-mode . lsp-enable-which-key-integration))
+  :commands lsp)
+
+;; to enable the lenses
+(add-hook 'lsp-mode-hook #'lsp-lens-mode)
+
+;; optionally
+(use-package lsp-ui :commands lsp-ui-mode
+  :functions
+    lsp-ui-peek-find-definitions
+  lsp-ui-peek-find-references
+  :config
+  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
+  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
+;; if you are helm user
+;(use-package helm-lsp :commands helm-lsp-workspace-symbol)
+;; if you are ivy user
+(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+(use-package lsp-treemacs :commands lsp-treemacs-errors-list
+  :after (treemacs)
+  :init
+  (lsp-treemacs-sync-mode 1))
+
+;; optionally if you want to use debugger
+(use-package dap-mode
+  :custom
+  (dap-auto-configure-mode t))
+;(require 'dap-gdb-lldb);;  (use-package dap-LANGUAGE) to load the dap adapter for your language
+
+;; optional if you want which-key integration
+(use-package which-key
+  :config
+  (which-key-mode))
+;;;
+
+(defun lsp-booster--advice-json-parse (old-fn &rest args)
+  "Try to parse bytecode instead of json."
+  (or
+   (when (equal (following-char) ?#)
+     (let ((bytecode (read (current-buffer))))
+       (when (byte-code-function-p bytecode)
+         (funcall bytecode))))
+   (apply old-fn args)))
+(advice-add (if (progn (require 'json)
+                       (fboundp 'json-parse-buffer))
+                'json-parse-buffer
+              'json-read)
+            :around
+            #'lsp-booster--advice-json-parse)
+
+(defun lsp-booster--advice-final-command (old-fn cmd &optional test?)
+  "Prepend emacs-lsp-booster command to lsp CMD."
+  (let ((orig-result (funcall old-fn cmd test?)))
+    (if (and (not test?)                             ;; for check lsp-server-present?
+             (not (file-remote-p default-directory)) ;; see lsp-resolve-final-command, it would add extra shell wrapper
+             lsp-use-plists
+             (not (functionp 'json-rpc-connection))  ;; native json-rpc
+             (executable-find "emacs-lsp-booster"))
+        (progn
+          (message "Using emacs-lsp-booster for %s!" orig-result)
+          (cons "emacs-lsp-booster" orig-result))
+      orig-result)))
+(advice-add 'lsp-resolve-final-command :around #'lsp-booster--advice-final-command)
+
+
 (use-package treemacs
   :functions
     treemacs-follow-mode
@@ -213,11 +291,11 @@
   :config
   (progn
     (setq treemacs-collapse-dirs                   (if treemacs-python-executable 3 0)
-          treemacs-deferred-git-apply-delay        0.5
           treemacs-directory-name-transformer      #'identity
           treemacs-display-in-side-window          t
           treemacs-eldoc-display                   'simple
           treemacs-file-event-delay                2000
+          treemacs-deferred-git-apply-delay        0.5
           treemacs-file-extension-regex            treemacs-last-period-regex-value
           treemacs-file-follow-delay               0.2
           treemacs-file-name-transformer           #'identity
@@ -325,81 +403,6 @@
   :config (yas-global-mode 1)
   :bind ("C-c y" . 'company-yasnippet))
 
-;;; copypasted from lsp-mode's installation page
-(use-package lsp-mode
-  :init
-  ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
-  (setq lsp-keymap-prefix "C-l")
-  :config
-  (setq lsp-copilot-enabled nil)
-  (setq lsp-modeline-diagnostics-enable t)
-;  (setq lsp-idle-delay 0.1)
-  :hook (
-     (prog-mode . lsp)
-    ;(XXX-mode . lsp)
-         ;; if you want which-key integration
-         (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
-
-;; to enable the lenses
-(add-hook 'lsp-mode-hook #'lsp-lens-mode)
-
-;; optionally
-(use-package lsp-ui :commands lsp-ui-mode
-  :functions
-    lsp-ui-peek-find-definitions
-  lsp-ui-peek-find-references
-  :config
-  (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-  (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references))
-;; if you are helm user
-;(use-package helm-lsp :commands helm-lsp-workspace-symbol)
-;; if you are ivy user
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
-(use-package lsp-treemacs :commands lsp-treemacs-errors-list
-  :init
-  (lsp-treemacs-sync-mode 1))
-
-;; optionally if you want to use debugger
-(use-package dap-mode
-  :custom
-  (dap-auto-configure-mode t))
-;(require 'dap-gdb-lldb);;  (use-package dap-LANGUAGE) to load the dap adapter for your language
-
-;; optional if you want which-key integration
-(use-package which-key
-  :config
-  (which-key-mode))
-;;;
-
-(defun lsp-booster--advice-json-parse (old-fn &rest args)
-  "Try to parse bytecode instead of json."
-  (or
-   (when (equal (following-char) ?#)
-     (let ((bytecode (read (current-buffer))))
-       (when (byte-code-function-p bytecode)
-         (funcall bytecode))))
-   (apply old-fn args)))
-(advice-add (if (progn (require 'json)
-                       (fboundp 'json-parse-buffer))
-                'json-parse-buffer
-              'json-read)
-            :around
-            #'lsp-booster--advice-json-parse)
-
-(defun lsp-booster--advice-final-command (old-fn cmd &optional test?)
-  "Prepend emacs-lsp-booster command to lsp CMD."
-  (let ((orig-result (funcall old-fn cmd test?)))
-    (if (and (not test?)                             ;; for check lsp-server-present?
-             (not (file-remote-p default-directory)) ;; see lsp-resolve-final-command, it would add extra shell wrapper
-             lsp-use-plists
-             (not (functionp 'json-rpc-connection))  ;; native json-rpc
-             (executable-find "emacs-lsp-booster"))
-        (progn
-          (message "Using emacs-lsp-booster for %s!" orig-result)
-          (cons "emacs-lsp-booster" orig-result))
-      orig-result)))
-(advice-add 'lsp-resolve-final-command :around #'lsp-booster--advice-final-command)
 
 (use-package flycheck
   :config
