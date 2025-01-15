@@ -27,8 +27,9 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 
 - Cua mode
 - Doom Emacs' `doom-material` [theme](https://github.com/doomemacs/themes) and `doom-modeline`
-- Native Emacs tabs
+- Native Emacs tabs (treat them as workspaces!)
 - LSP via `lsp-mode`, with support for `emacs-lsp-booster`
+  - Just add the `emacs-lsp-booster` executable to your PATH
 - Autostart at 160x50
 - Separate custom.el
 
@@ -72,3 +73,5 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
   - customized to exclude dashboard-mode to avoid conflicts
 - `emojify`: emoji support
 - `rainbow-mode`: hex codes get displayed in their colors in CSS files
+- `emmet-mode`: emmet on html buffers via `C-j`
+- `editorconfig`: respect `.editorconfig` files in projects that have them
