@@ -158,7 +158,9 @@
       nil nil 'bottom))
 
 (use-package avy
-  :bind ("C-:" . 'avy-goto-char))
+  :bind ("C-:" . 'avy-goto-char)
+  :config
+  (setq avy-style 'de-bruijn))
 
 ;;; copypasted from witchmacs
 (use-package switch-window
