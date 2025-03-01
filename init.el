@@ -26,6 +26,10 @@
   (lambda ()
     (delete 'newline-mark whitespace-style)))
 
+(pixel-scroll-precision-mode t)
+(setq pixel-scroll-precision-interpolate-page t
+      pixel-scroll-precision-interpolation-factor 1.5
+      pixel-scroll-precision-use-momentum t)
 
 (show-paren-mode 1)
 
