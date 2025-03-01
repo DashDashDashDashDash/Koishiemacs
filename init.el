@@ -59,8 +59,6 @@
 (setq-default indent-tabs-mode nil)
 (setq backward-delete-char-untabify-method 'nil)
 
-(global-prettify-symbols-mode t)
-
 (setq electric-pair-pairs '(
                        (?\{ . ?\})
                        (?\( . ?\))
