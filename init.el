@@ -62,11 +62,12 @@
 (global-prettify-symbols-mode t)
 
 (setq electric-pair-pairs '(
-                            (?\{ . ?\})
-                            (?\( . ?\))
-                            (?\[ . ?\])
-                            (?\" . ?\")
-                            ))
+                       (?\{ . ?\})
+                       (?\( . ?\))
+                       (?\[ . ?\])
+                       (?\" . ?\")
+                       (?\< . ?\>)
+                       ))
 (electric-pair-mode t)
 
 (customize-set-variable
