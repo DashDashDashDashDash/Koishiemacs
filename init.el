@@ -207,6 +207,7 @@
   :config
   (setq lsp-copilot-enabled nil)
   (setq lsp-modeline-diagnostics-enable t)
+  (setq lsp-warn-no-matched-clients nil)
 ;  (setq lsp-idle-delay 0.1)
   :hook (
      (prog-mode . lsp)
