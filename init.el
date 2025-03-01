@@ -1,3 +1,9 @@
+;;; init.el --- Koishiemacs' init file. -*- lexical-binding: nil -*-
+
+;;; Commentary:
+;; This is just my config file.
+
+;;; Code:
 (add-to-list 'default-frame-alist '(height . 50))
 (add-to-list 'default-frame-alist '(width . 160))
 
