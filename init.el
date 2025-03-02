@@ -59,6 +59,16 @@
 (setq-default indent-tabs-mode nil)
 (setq backward-delete-char-untabify-method 'nil)
 
+(defalias 'yes-or-no-p 'y-or-n-p)
+
+(global-hl-line-mode t)
+
+(cua-mode t)
+(setq cua-keep-region-after-copy t)
+(setq epg-pinentry-mode 'loopback)
+
+(setq apropos-do-all t)
+
 (setq electric-pair-pairs '(
                        (?\{ . ?\})
                        (?\( . ?\))
@@ -86,16 +96,6 @@
       (balance-windows)
       (other-window 1))
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
-
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-(global-hl-line-mode t)
-
-(cua-mode t)
-(setq cua-keep-region-after-copy t)
-(setq epg-pinentry-mode 'loopback)
-
-(setq apropos-do-all t)
 
 (global-set-key (kbd "<mouse-movement>") 'ignore)
 (global-set-key (kbd "<tab-bar> <mouse-movement>") 'ignore)
