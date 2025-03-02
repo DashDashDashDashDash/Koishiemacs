@@ -101,9 +101,9 @@
 (global-set-key (kbd "<tab-bar> <mouse-movement>") 'ignore)
 
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 
 (unless (package-installed-p 'use-package)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
   (package-install 'use-package))
 (unless (package-installed-p 'swiper)
   (package-refresh-contents))
