@@ -34,6 +34,8 @@
 (show-paren-mode 1)
 
 (save-place-mode t)
+(editorconfig-mode t)
+(which-key-mode t)
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
@@ -312,12 +314,6 @@
   :custom
   (dap-auto-configure-mode t))
 ;(require 'dap-gdb-lldb);;  (use-package dap-LANGUAGE) to load the dap adapter for your language
-
-;; optional if you want which-key integration
-(use-package which-key
-  :config
-  (which-key-mode))
-;;;
 
 (defun lsp-booster--advice-json-parse (old-fn &rest args)
   "Try to parse bytecode instead of json."
@@ -649,9 +645,6 @@
 ;                         (bookmarks . 5)
 ;                         (projects  . 5)
 ;                         (agenda    . 5)
-
-(use-package editorconfig
-  :config (editorconfig-mode 1))
 
 (use-package solaire-mode
   :config
