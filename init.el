@@ -33,8 +33,6 @@
 
 (show-paren-mode 1)
 
-(setq x-select-enable-clipboard t)
-
 (save-place-mode t)
 
 (setq make-backup-files nil)
