@@ -4,21 +4,73 @@
 ;; This is just my config file.
 
 ;;; Code:
-(add-to-list 'default-frame-alist '(height . 50))
-(add-to-list 'default-frame-alist '(width . 160))
 
+; Before anything else, make sure we're on a compatible environment.
+(when (version< emacs-version "30")
+  (warn "Koishiemacs would love to be running on Emacs 30 or above!")
+  (warn "This init file should break. Try installing the editorconfig and which-key packages manually then restart."))
+
+(if (not (string-match-p (regexp-quote "--with-tree-sitter") system-configuration-options))
+    (warn "Koishiemacs urges you to build Emacs using \"--with-tree-sitter\"!"))
+
+; Now, define our custom-file.
 (defconst custom-file (expand-file-name "custom.el" user-emacs-directory))
 (unless (file-exists-p custom-file)
   (write-region "" nil custom-file))
 
-;(setq warning-minimum-level :error)
+; Then, set some opinionated better defaults.
+(add-to-list 'default-frame-alist '(height . 50))
+(add-to-list 'default-frame-alist '(width . 160))
 
-(setq gc-cons-threshold 134217728)
+(show-paren-mode 1)
+(save-place-mode t)
+(editorconfig-mode t)
+(which-key-mode t)
 
-(set-language-environment "UTF-8")
+(cua-mode t)
+(tool-bar-mode -1)
+(tab-bar-mode t)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(global-hl-line-mode t)
 
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
+; Tab changes
+(setq-default tab-width 2
+              standard-indent 2
+              electric-indent-inhibit t
+              indent-tabs-mode nil)
+(setq c-basic-offset tab-width)
+
+; Misc. options
+(setq gc-cons-threshold 134217728  ; Hopefully speed up Emacs.
+;     warning-minimum-level :error ; Silence warnings (not recommended)
+      make-backup-files nil        ; Don't litter.
+      auto-save-default nil        ; "
+      scroll-conservatively 1000   ; Don't jump around while scrolling.
+      split-width-threshold 120    ; Set constraints for when newly
+      split-height-threshold 80    ; Created windows should open a split.
+      ring-bell-function 'ignore   ; Don't beep.
+      cua-keep-region-after-copy t
+      epg-pinentry-mode 'loopback
+      apropos-do-all t
+      backward-delete-char-untabify-method 'nil) ; Backspace normally.
+
+
+(setq electric-pair-pairs '(
+                       (?\{ . ?\})
+                       (?\( . ?\))
+                       (?\[ . ?\])
+                       (?\" . ?\")
+                       (?\< . ?\>)
+                       (?\` . ?\`)
+                       ))
+(electric-pair-mode t)
+
+
+(set-language-environment "UTF-8") ; TODO
+
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
+(add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (setq whitespace-line-column 999) ; can't think of a sensible value to put in here yet
@@ -31,58 +83,13 @@
       pixel-scroll-precision-interpolation-factor 1.5
       pixel-scroll-precision-use-momentum t)
 
-(show-paren-mode 1)
-
-(save-place-mode t)
-(editorconfig-mode t)
-(which-key-mode t)
-
-(setq make-backup-files nil)
-(setq auto-save-default nil)
-
-(setq scroll-conservatively 1000)
-
-(setq split-width-threshold 120)
-(setq split-height-threshold 80)
-
-(setq ring-bell-function 'ignore)
-
-(tool-bar-mode -1)
-(tab-bar-mode t)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-
-(setq-default tab-width 2)
-(setq-default standard-indent 2)
-(setq c-basic-offset tab-width)
-(setq-default electric-indent-inhibit t)
-(setq-default indent-tabs-mode nil)
-(setq backward-delete-char-untabify-method 'nil)
-
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-(global-hl-line-mode t)
-
-(cua-mode t)
-(setq cua-keep-region-after-copy t)
-(setq epg-pinentry-mode 'loopback)
-
-(setq apropos-do-all t)
-
-(setq electric-pair-pairs '(
-                       (?\{ . ?\})
-                       (?\( . ?\))
-                       (?\[ . ?\])
-                       (?\" . ?\")
-                       (?\< . ?\>)
-                       (?\` . ?\`)
-                       ))
-(electric-pair-mode t)
-
 (customize-set-variable
   'tramp-ssh-controlmaster-options
   (concat
     "-o ControlPath=/tmp/%%C"))
+
+; thanks, witchmacs!
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (defun split-and-follow-horizontally ()
       (interactive)
