@@ -61,9 +61,6 @@
                        ))
 (electric-pair-mode t)
 
-
-(set-language-environment "UTF-8") ; TODO
-
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
