@@ -1,11 +1,5 @@
-;;; init.el --- Koishiemacs' init file. -*- lexical-binding: nil -*-
+; -*- lexical-binding: nil; -*-
 
-;;; Commentary:
-;; This is just my config file.
-
-;;; Code:
-
-; Before anything else, make sure we're on a compatible environment.
 (when (version< emacs-version "30")
   (warn "Koishiemacs would love to be running on Emacs 30 or above!")
   (warn "This init file should break. Try installing the editorconfig and which-key packages manually then restart."))
@@ -672,6 +666,3 @@
   :hook (mhtml-mode . emmet-mode))
 
 (load "~/.emacs.d/custom.el")
-
-(provide 'init)
-;;; init.el ends here
