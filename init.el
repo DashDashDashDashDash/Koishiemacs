@@ -122,12 +122,6 @@
 (use-package swiper
   :bind ("C-s" . 'swiper))
 
-(use-package ivy-posframe
-  :config
-  (setq ivy-posframe-display-functions-alist
-        '((counsel-M-x . ivy-posframe-display-at-frame-center)))
-  (ivy-posframe-mode t))
-
 (use-package doom-themes
   :ensure t
   :config
@@ -239,7 +233,7 @@
 ;; if you are helm user
 ;(use-package helm-lsp :commands helm-lsp-workspace-symbol)
 ;; if you are ivy user
-(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
+;(use-package lsp-ivy :commands lsp-ivy-workspace-symbol)
 (use-package lsp-treemacs :commands lsp-treemacs-errors-list
   :after (treemacs)
   :init
