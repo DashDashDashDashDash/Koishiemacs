@@ -454,12 +454,6 @@
   :config
   (treemacs-load-theme "nerd-icons"))
 
-(use-package yasnippet-snippets)
-(use-package yasnippet
-  :config (yas-global-mode 1)
-  :bind ("C-c y" . 'company-yasnippet))
-
-
 (use-package flycheck
   :config
   (setq flycheck-indication-mode 'right-fringe)
