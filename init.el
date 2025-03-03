@@ -651,12 +651,6 @@
   (solaire-global-mode t)
   (add-hook 'dashboard-mode-hook (lambda () (solaire-mode 0))))
 
-(use-package emojify
-  :config
-  (global-emojify-mode-line-mode)
-  (emojify-set-emoji-styles '(unicode github))
-  :hook (after-init . global-emojify-mode))
-
 (use-package rainbow-mode
   :hook (css-mode . rainbow-mode))
 

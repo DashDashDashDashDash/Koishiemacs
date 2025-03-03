@@ -71,6 +71,5 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - `dashboard`: the frontpage in the image above
 - `solaire-mode`: distinguish file buffers from "fake" buffers
   - customized to exclude dashboard-mode to avoid conflicts
-- `emojify`: emoji support
 - `rainbow-mode`: hex codes get displayed in their colors in CSS files
 - `emmet-mode`: emmet on html buffers via `C-j`
