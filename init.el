@@ -105,7 +105,7 @@
 (unless (package-installed-p 'use-package)
   (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
   (package-install 'use-package))
-(unless (package-installed-p 'swiper)
+(unless (package-installed-p 'vertico)
   (package-refresh-contents))
 (require 'use-package-ensure)
 (setq use-package-always-ensure t
@@ -113,7 +113,7 @@
 
 ;; Enable Vertico.
 (use-package vertico
-  :custom
+  ;; :custom
   ;; (vertico-scroll-margin 0) ;; Different scroll margin
   ;; (vertico-count 20) ;; Show more candidates
   ;; (vertico-resize t) ;; Grow and shrink the Vertico minibuffer
