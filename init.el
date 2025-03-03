@@ -665,3 +665,6 @@
   :hook (mhtml-mode . emmet-mode))
 
 (load "~/.emacs.d/custom.el")
+
+(provide 'init)
+;;; init.el ends here
