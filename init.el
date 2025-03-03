@@ -26,6 +26,7 @@
 (tab-bar-mode t)
 (menu-bar-mode -1)
 (scroll-bar-mode -1)
+(global-tab-line-mode t)
 (global-hl-line-mode t)
 
 ; Tab changes
@@ -204,7 +205,10 @@
   ;; Enable flashing mode-line on errors
   (doom-themes-visual-bell-config)
   ;; Corrects (and improves) org-mode's native fontification.
-  (doom-themes-org-config))
+  (doom-themes-org-config)
+  (custom-set-faces
+   '(tab-bar ((t (:weight bold))))
+   '(tab-line-tab-special ((t nil)))))
 
 (use-package projectile
   :init
