@@ -42,14 +42,14 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 
 ## Details on the packages used
 
-- `ivy`: autocompletion to emacs commands
-- `counsel`: use ivy whenever possible
-- `swiper`: better interface to `C-s`
-- `ivy-posframe`: configured to make `M-x` appear in the center of the window
+- `vertico`: provides completion to emacs commands on the minibuffer
+- `savehist`: "Persist history over Emacs restarts." from vertico
+- `orderless`: a different, more feature-rich completion style for use with vertico & co.
+- `corfu`: code completion on buffers
 - `doom-themes`: set to doom-material theme
   - also flashes the modeline on errors
 - `projectile`(`-ripgrep`): project management, prefixed to `C-c p`, ripgrep by `C-c p s r`
-- `magit`: git if it was awesome
+- `magit`: git if it was awesome. `C-x g` to get started.
 - `git-gutter-fringe`: show details on lines added/modified/deleted on the left fringe of the buffer
 - `avy`: `C-:` to move cursor anywhere on the screen using hotkeys
 - `switch-window`: `C-x o` brings a hotkey for each window if you have over 2 windows open in the same frame
@@ -58,8 +58,10 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - `nerd-icons-dired`: use icons on dired (`C-x d`)
 - `doom-modeline`: doom emacs' modeline
 - `treemacs`: a tree view of a directory in emacs
-- `company`: autocompletion inside buffers
-- `yasnippet`(`-snippets`): code snippets, bound to company with `C-c y`
+- `consult`: replaces lots of search-related and other features with richer menus
+  - in particular, replaces `C-s`. `C-S-s` for a wider search on all open buffers.
+- `marginalia`: adds useful annotations to anything completion-related
+- `embark`: provides a "context menu" to whatever is at point with `C-.`
 - `lsp-*`: language server protocol -- turns emacs into a recognizable ide
 - `dap-mode`: debugging, goes hand-in-hand with the lsp package above
 - `which-key`: hints at command combos in the minibuffer when you're in the middle of one
