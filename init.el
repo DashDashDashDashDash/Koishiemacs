@@ -11,7 +11,7 @@
 (unless (file-exists-p custom-file)
   (write-region "" nil custom-file))
 
-(setq warning-minimum-level :error)
+;(setq warning-minimum-level :error)
 
 (setq gc-cons-threshold 134217728)
 
