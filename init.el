@@ -625,23 +625,30 @@
   (move-text-default-bindings))
 
 (use-package page-break-lines
+  :config
+  (add-hook 'dashboard-mode-hook (lambda () (hl-line-mode nil)))
   :hook (dashboard-mode . page-break-lines-mode))
+
 (use-package dashboard
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-projects-backend 'projectile)
-  (setq dashboard-banner-logo-title "Welcome to Koishiemacs")
-  (setq dashboard-image-banner-max-height 450)
-  (setq dashboard-startup-banner "~/.emacs.d/koishi.png")
-  (setq dashboard-vertically-center-content t)
-  (setq dashboard-startupify-list '(dashboard-insert-newline
-                    dashboard-insert-banner-title
-                    dashboard-insert-newline
-                    dashboard-insert-init-info
-                    dashboard-insert-items
-                    dashboard-insert-banner))
-  (setq dashboard-items '((projects  . 5)
-              (recents   . 3))))
+  (setq dashboard-projects-backend 'projectile
+        dashboard-banner-logo-title "Welcome to Koishiemacs"
+        dashboard-image-banner-max-height 450
+        dashboard-startup-banner "~/.emacs.d/koishi.png"
+        dashboard-center-content t
+        dashboard-page-separator "
+"
+        dashboard-startupify-list '(dashboard-insert-newline
+                                    dashboard-insert-banner-title
+                                    dashboard-insert-newline
+                                    dashboard-insert-init-info
+                                    dashboard-insert-items
+                                    dashboard-insert-banner)
+        dashboard-items '((recents   . 5)
+                          (projects  . 5)))
+  (add-hook 'dashboard-after-initialize-hook
+            (lambda () (dashboard-jump-to-recents))))
 ;                         (bookmarks . 5)
 ;                         (projects  . 5)
 ;                         (agenda    . 5)
