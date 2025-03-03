@@ -103,16 +103,17 @@
 (global-set-key (kbd "<mouse-movement>") 'ignore)
 (global-set-key (kbd "<tab-bar> <mouse-movement>") 'ignore)
 
+; now, package stuff
 (require 'package)
 
-(unless (package-installed-p 'use-package)
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-  (package-install 'use-package))
+; use-package is installed by default on emacs 29
 (unless (package-installed-p 'vertico)
+  (package-install 'use-package)
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
   (package-refresh-contents))
 (require 'use-package-ensure)
-(setq use-package-always-ensure t
-      use-package-expand-minimally t)
+(setq use-package-always-ensure t)
+;      use-package-expand-minimally t)
 
 ;; Enable Vertico.
 (use-package vertico
