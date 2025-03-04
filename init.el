@@ -22,12 +22,18 @@
 (which-key-mode t)
 
 (cua-mode t)
-(tool-bar-mode -1)
-(tab-bar-mode t)
-(menu-bar-mode -1)
-(scroll-bar-mode -1)
-(global-tab-line-mode t)
-(global-hl-line-mode t)
+(when (fboundp 'tool-bar-mode)
+  (tool-bar-mode -1))
+(when (not (fboundp 'tab-bar-mode))
+  (tab-bar-mode t))
+(when (fboundp 'menu-bar-mode)
+  (menu-bar-mode -1))
+(when (fboundp 'scroll-bar-mode)
+  (scroll-bar-mode -1))
+(when (not (fboundp 'global-tab-line-mode))
+  (global-tab-line-mode t))
+(when (not (fboundp 'global-hl-line-mode))
+  (global-hl-line-mode t))
 
 ; Tab changes
 (setq-default tab-width 2
