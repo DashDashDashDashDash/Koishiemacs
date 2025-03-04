@@ -1,4 +1,6 @@
 ; -*- lexical-binding: nil; -*-
+; Hi! If you're contributing or something, make sure to set Git's
+; status.showuntrackedfiles config to "no".
 
 (when (version< emacs-version "30")
   (warn "Koishiemacs would love to be running on Emacs 30 or above!")
