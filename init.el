@@ -34,6 +34,8 @@
   (global-tab-line-mode t))
 (when (not (fboundp 'global-hl-line-mode))
   (global-hl-line-mode t))
+(when (not (fboundp 'delete-selection-mode))
+  (delete-selection-mode t))
 
 ; Tab changes
 (setq-default tab-width 2
