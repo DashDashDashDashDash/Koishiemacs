@@ -52,13 +52,12 @@
 
 
 (setq electric-pair-pairs '(
-                       (?\{ . ?\})
-                       (?\( . ?\))
-                       (?\[ . ?\])
-                       (?\" . ?\")
-                       (?\< . ?\>)
-                       (?\` . ?\`)
-                       ))
+                            (?\{ . ?\})
+                            (?\( . ?\))
+                            (?\[ . ?\])
+                            (?\" . ?\")
+                            (?\` . ?\`)
+                            ))
 (electric-pair-mode t)
 
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
