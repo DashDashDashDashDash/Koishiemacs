@@ -96,8 +96,11 @@
       (other-window 1))
 (global-set-key (kbd "C-x 3") 'split-and-follow-vertically)
 
-(global-set-key (kbd "<mouse-movement>") 'ignore)
-(global-set-key (kbd "<tab-bar> <mouse-movement>") 'ignore)
+; keybinds
+(bind-key "M-n" 'scroll-up)
+(bind-key "M-p" 'scroll-down)
+(bind-key (kbd "<mouse-movement>") 'ignore)
+(bind-key (kbd "<tab-bar> <mouse-movement>") 'ignore)
 
 ; conditional stuff for system types
 
