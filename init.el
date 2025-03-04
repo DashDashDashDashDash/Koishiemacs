@@ -50,9 +50,12 @@
       split-width-threshold 120    ; Set constraints for when newly
       split-height-threshold 80    ; Created windows should open a split.
       ring-bell-function 'ignore   ; Don't beep.
-      cua-keep-region-after-copy t
-      epg-pinentry-mode 'loopback
-      apropos-do-all t
+      cua-keep-region-after-copy t ; Don't unselect after copying.
+      epg-pinentry-mode 'loopback  ; Make gpg pinentry work inside Emacs.
+      apropos-do-all t             ; Search more on apropos.
+      completion-ignore-case t     ; Make completion case-insensitive.
+      read-buffer-completion-ignore-case t    ; Make some minibuffer
+      read-file-name-completion-ignore-case t ; entries case-insensitive.
       backward-delete-char-untabify-method 'nil) ; Backspace normally.
 
 ; thanks, better-defaults!
