@@ -39,6 +39,10 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - rebinds for `C-x 2` and `C-x 3`
 - nearly all minor QoL changes
 
+## Features borrowed from [Prelude](https://github.com/bbatsov/prelude)
+
+- open links in WSL's host OS
+
 ## Details on the packages used
 
 - `vertico`: provides completion to emacs commands on the minibuffer
