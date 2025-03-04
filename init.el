@@ -45,8 +45,7 @@
 ; Misc. options
 (setq gc-cons-threshold 134217728  ; Hopefully speed up Emacs.
 ;     warning-minimum-level :error ; Silence warnings (not recommended)
-      make-backup-files nil        ; Don't litter.
-      auto-save-default nil        ; "
+      auto-save-default nil        ; Don't autosave.
       scroll-conservatively 1000   ; Don't jump around while scrolling.
       split-width-threshold 120    ; Set constraints for when newly
       split-height-threshold 80    ; Created windows should open a split.
@@ -56,6 +55,10 @@
       apropos-do-all t
       backward-delete-char-untabify-method 'nil) ; Backspace normally.
 
+; thanks, better-defaults!
+(unless backup-directory-alist
+  (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
+                                                 "backups")))))
 
 (setq electric-pair-pairs '(
                             (?\{ . ?\})
