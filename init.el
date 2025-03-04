@@ -110,6 +110,9 @@
 (bind-key "M-p" 'scroll-down)
 (bind-key (kbd "<mouse-movement>") 'ignore)
 (bind-key (kbd "<tab-bar> <mouse-movement>") 'ignore)
+; thanks, better-defaults!
+(bind-key "C-x C-b" 'ibuffer)
+(bind-key "M-z" 'zap-up-to-char)
 
 ; conditional stuff for system types
 
