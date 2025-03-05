@@ -703,7 +703,7 @@
 (use-package dashboard
   :config
   (dashboard-setup-startup-hook)
-  (add-hook 'dashboard-mode-hook (lambda () (hl-line-mode nil)))
+  (add-hook 'dashboard-mode-hook (lambda () (hl-line-mode -1)))
   (setq dashboard-projects-backend 'projectile
         dashboard-banner-logo-title "Welcome to Koishiemacs"
         dashboard-image-banner-max-height 450
@@ -720,7 +720,13 @@
         dashboard-items '((recents   . 5)
                           (projects  . 5)))
   (add-hook 'dashboard-after-initialize-hook
-            (lambda () (dashboard-jump-to-recents))))
+            (lambda () (dashboard-jump-to-recents)))
+  (setq initial-buffer-choice (lambda () (get-buffer-create dashboard-buffer-name)))
+  (add-hook 'server-after-make-frame-hook
+            (lambda ()
+              (when (eq (buffer-local-value 'major-mode (current-buffer)) 'dashboard-mode)
+                (dashboard-refresh-buffer)
+                (hl-line-mode -1)))))
 ;                         (bookmarks . 5)
 ;                         (projects  . 5)
 ;                         (agenda    . 5)
