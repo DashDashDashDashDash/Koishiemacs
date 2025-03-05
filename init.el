@@ -49,7 +49,6 @@
 ; Misc. options
 (setq gc-cons-threshold 134217728  ; Hopefully speed up Emacs.
 ;     warning-minimum-level :error ; Silence warnings (not recommended)
-      auto-save-default nil        ; Don't autosave.
       scroll-conservatively 1000   ; Don't jump around while scrolling.
       split-width-threshold 120    ; Set constraints for when newly
       split-height-threshold 80    ; Created windows should open a split.
@@ -64,8 +63,13 @@
 
 ; thanks, better-defaults!
 (unless backup-directory-alist
-  (setq backup-directory-alist `(("." . ,(concat user-emacs-directory
-                                                 "backups")))))
+  (setq backup-directory-alist
+        `((".*" . ,(concat user-emacs-directory "backups")))))
+; thanks as well, prelude!
+(unless auto-save-file-name-transforms
+  (setq auto-save-file-name-transforms
+        `((".*" ,(concat user-emacs-directory "autosaves")))))
+
 
 (setq electric-pair-pairs '(
                             (?\{ . ?\})
