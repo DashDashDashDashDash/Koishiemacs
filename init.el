@@ -32,12 +32,10 @@
   (menu-bar-mode -1))
 (when (fboundp 'scroll-bar-mode)
   (scroll-bar-mode -1))
-(when (not (fboundp 'global-tab-line-mode))
-  (global-tab-line-mode t))
-(when (not (fboundp 'global-hl-line-mode))
-  (global-hl-line-mode t))
 (when (not (fboundp 'delete-selection-mode))
   (delete-selection-mode t))
+(global-tab-line-mode t)
+(global-hl-line-mode t)
 
 ; Tab changes
 (setq-default tab-width 2
