@@ -161,7 +161,11 @@
 ;; Persist history over Emacs restarts. Vertico sorts by history position.
 (use-package savehist
   :init
-  (savehist-mode))
+  (savehist-mode)
+  :config
+  (setq savehist-additional-variables
+        '(search-ring regexp-search-ring)
+        savehist-autosave-interval 60))
 
 ;; Emacs minibuffer configurations.
 (use-package emacs
