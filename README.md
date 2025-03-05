@@ -28,10 +28,13 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - Cua mode
 - Doom Emacs' `doom-material` [theme](https://github.com/doomemacs/themes) and `doom-modeline`
 - Native Emacs tabs (treat them as workspaces!)
+- Native Emacs buffer tabs
 - LSP via `lsp-mode`, with support for `emacs-lsp-booster`
   - Just add the `emacs-lsp-booster` executable to your PATH
-- Autostart at 160x50
+- Tree-sitter heavy support, with `major-mode-remap-alist` already set
+- Autostart at a wide 160x50
 - Separate custom.el
+
 
 ## Features borrowed from [Witchmacs](https://github.com/snackon/Witchmacs)
 
