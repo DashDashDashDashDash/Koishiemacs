@@ -1,7 +1,7 @@
 # Koishiemacs
 ##### *pronounced "koishi-macs"*
 ---
-![](https://ptpimg.me/4x6m6h.png)
+![](https://ptpimg.me/zu73x2.png)
 ---
 
 These are just my emacs configuration files. It's only really meant for me to sync my config across places with relative ease.
