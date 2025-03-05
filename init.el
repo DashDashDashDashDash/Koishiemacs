@@ -667,12 +667,12 @@
 
 (use-package page-break-lines
   :config
-  (add-hook 'dashboard-mode-hook (lambda () (hl-line-mode nil)))
-  :hook (dashboard-mode . page-break-lines-mode))
+  (global-page-break-lines-mode t))
 
 (use-package dashboard
   :config
   (dashboard-setup-startup-hook)
+  (add-hook 'dashboard-mode-hook (lambda () (hl-line-mode nil)))
   (setq dashboard-projects-backend 'projectile
         dashboard-banner-logo-title "Welcome to Koishiemacs"
         dashboard-image-banner-max-height 450
