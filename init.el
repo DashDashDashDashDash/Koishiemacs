@@ -118,6 +118,11 @@
 (bind-key "C-M-<down>" 'windmove-down)
 (bind-key "C-M-<up>" 'windmove-up)
 
+(bind-key "C-S-M-<left>" 'shrink-window-horizontally)
+(bind-key "C-S-M-<right>" 'enlarge-window-horizontally)
+(bind-key "C-S-M-<down>" 'shrink-window)
+(bind-key "C-S-M-<up>" 'enlarge-window)
+
 
 (setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
 (bind-key "C-x o" 'ace-window)
