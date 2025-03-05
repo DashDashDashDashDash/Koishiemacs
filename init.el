@@ -118,6 +118,10 @@
 (bind-key "C-M-<down>" 'windmove-down)
 (bind-key "C-M-<up>" 'windmove-up)
 
+
+(setq aw-keys '(?a ?s ?d ?f ?g ?h ?j ?k ?l))
+(bind-key "C-x o" 'ace-window)
+
 ; conditional stuff for system types
 
 ; thanks, prelude!
@@ -277,18 +281,6 @@
   :bind ("C-:" . 'avy-goto-char)
   :config
   (setq avy-style 'de-bruijn))
-
-;;; copypasted from witchmacs
-(use-package switch-window
-      :config
-      (setq switch-window-input-style 'minibuffer)
-      (setq switch-window-increase 4)
-      (setq switch-window-threshold 2)
-      (setq switch-window-shortcut-style 'qwerty)
-      (setq switch-window-qwerty-shortcuts
-    '("a" "s" "d" "f" "z" "x" "c" "v"))
-      :bind
-      ([remap other-window] . switch-window))
 
 (use-package undo-tree
   :config

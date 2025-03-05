@@ -35,14 +35,14 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 
 ## Features borrowed from [Witchmacs](https://github.com/snackon/Witchmacs)
 
-- switch-window's :config
 - rebinds for `C-x 2` and `C-x 3`
-- nearly all minor QoL changes
+- some minor QoL changes
 
 ## Features borrowed from [Prelude](https://github.com/bbatsov/prelude)
 
 - open links in WSL's host OS
 - `windmove-mode` bound to `C-M-<arrow keys>` for easier frame navigation
+- lots of QoL changes
 
 ## Details on the packages used
 
