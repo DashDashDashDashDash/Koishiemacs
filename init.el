@@ -66,19 +66,8 @@
   (setq backup-directory-alist
         `((".*" . ,(concat user-emacs-directory "backups")))))
 ; thanks as well, prelude!
-(unless auto-save-file-name-transforms
-  (setq auto-save-file-name-transforms
-        `((".*" ,(concat user-emacs-directory "autosaves")))))
-
-
-(setq electric-pair-pairs '(
-                            (?\{ . ?\})
-                            (?\( . ?\))
-                            (?\[ . ?\])
-                            (?\" . ?\")
-                            (?\` . ?\`)
-                            ))
-(electric-pair-mode t)
+(setq auto-save-file-name-transforms
+      `((".*" ,(concat user-emacs-directory "autosaves"))))
 
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
@@ -149,6 +138,11 @@
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
 ;      use-package-expand-minimally t)
+
+(use-package smartparens
+  :hook (prog-mode text-mode markdown-mode)
+  :config
+  (require 'smartparens-config))
 
 ;; Enable Vertico.
 (use-package vertico
