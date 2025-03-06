@@ -158,7 +158,8 @@
 ;;         (toml "https://github.com/tree-sitter/tree-sitter-toml")
 ;;         (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
 ;;         (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
-;;         (yaml "https://github.com/ikatyang/tree-sitter-yaml")))
+;;         (yaml "https://github.com/ikatyang/tree-sitter-yaml"))
+;;         (lua "https://github.com/tree-sitter-grammars/tree-sitter-lua"))
 
 ;; (mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist))
 
@@ -706,7 +707,7 @@
   (add-hook 'dashboard-mode-hook (lambda () (hl-line-mode -1)))
   (setq dashboard-projects-backend 'projectile
         dashboard-banner-logo-title "Welcome to Koishiemacs"
-        dashboard-image-banner-max-height 450
+        dashboard-image-banner-max-height 300
         dashboard-startup-banner "~/.emacs.d/koishi.png"
         dashboard-center-content t
         dashboard-page-separator "
