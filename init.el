@@ -360,7 +360,9 @@
     ;(XXX-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
-  :commands lsp)
+  :commands lsp
+  :custom
+  (lsp-completion-provider :none))
 
 ;; to enable the lenses
 (add-hook 'lsp-mode-hook #'lsp-lens-mode)
@@ -368,7 +370,7 @@
 ;; optionally
 (use-package lsp-ui :commands lsp-ui-mode
   :functions
-    lsp-ui-peek-find-definitions
+  lsp-ui-peek-find-definitions
   lsp-ui-peek-find-references
   :config
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
