@@ -711,7 +711,7 @@
   (setq dashboard-projects-backend 'projectile
         dashboard-banner-logo-title "Welcome to Koishiemacs"
         dashboard-image-banner-max-height 300
-        dashboard-startup-banner "~/.emacs.d/koishi.png"
+        dashboard-startup-banner (expand-file-name "koishi.png" user-emacs-directory)
         dashboard-center-content t
         dashboard-page-separator "
 "
@@ -746,4 +746,4 @@
 (use-package emmet-mode
   :hook (mhtml-mode . emmet-mode))
 
-(load "~/.emacs.d/custom.el")
+(load (expand-file-name "custom.el" user-emacs-directory))
