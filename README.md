@@ -16,6 +16,8 @@ git clone https://github.com/DashDashDashDashDash/Koishiemacs/ ~/.emacs.d
 ```
 You'll get prompted once to install fonts for `nerd-icons`. On Windows, you must install the font `nerd-icons` drops manually.
 
+If you want to use tree-sitter, you'll need to install the grammars onto Emacs. One way of doing this is embedded into the init.el, and you can use it by searching for `treesit`, uncommenting the relevant lines and `C-x C-e`ing the two expressions.
+
 If you're using smaller fonts, or if you're on a smaller screen, you might want to change the dashboard banner image's max height. To do so, just edit the following line... 
 ```elisp
 (setq dashboard-image-banner-max-height 450) ; ...to 300, maybe
