@@ -119,10 +119,10 @@
 (bind-key "C-x C-b" 'ibuffer)
 (bind-key "M-z" 'zap-up-to-char)
 
-(bind-key "C-M-<left>" 'windmove-left)
-(bind-key "C-M-<right>" 'windmove-right)
-(bind-key "C-M-<down>" 'windmove-down)
-(bind-key "C-M-<up>" 'windmove-up)
+(bind-key "C-c <left>" 'windmove-left)
+(bind-key "C-c <right>" 'windmove-right)
+(bind-key "C-c <down>" 'windmove-down)
+(bind-key "C-c <up>" 'windmove-up)
 
 (bind-key "C-S-M-<left>" 'shrink-window-horizontally)
 (bind-key "C-S-M-<right>" 'enlarge-window-horizontally)
