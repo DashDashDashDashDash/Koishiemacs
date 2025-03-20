@@ -33,7 +33,7 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - Native Emacs buffer tabs
 - LSP via `lsp-mode`, with support for `emacs-lsp-booster`
   - Just add the `emacs-lsp-booster` executable to your PATH
-- Tree-sitter heavy support, with `major-mode-remap-alist` already set
+- Tree-sitter support, with `major-mode-remap-alist` already set
 - Autostart at a wide 160x50
 - Separate custom.el
 

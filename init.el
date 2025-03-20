@@ -6,9 +6,6 @@
   (warn "Koishiemacs would love to be running on Emacs 30 or above!")
   (warn "This init file should break. Try installing the editorconfig and which-key packages manually then restart."))
 
-(if (not (string-match-p (regexp-quote "--with-tree-sitter") system-configuration-options))
-    (warn "Koishiemacs urges you to build Emacs using \"--with-tree-sitter\"!"))
-
 ; Now, define our custom-file.
 (defconst custom-file (expand-file-name "custom.el" user-emacs-directory))
 (unless (file-exists-p custom-file)
