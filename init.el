@@ -322,7 +322,7 @@
       nil nil 'bottom))
 
 (use-package avy
-  :bind ("C-:" . 'avy-goto-char)
+  :bind ("C-;" . 'avy-goto-char)
   :config
   (setq avy-style 'de-bruijn))
 
@@ -654,7 +654,7 @@
 (use-package embark
   :bind
   (("C-." . embark-act)         ;; pick some comfortable binding
-   ("C-;" . embark-dwim)        ;; good alternative: M-.
+   ("M-." . embark-dwim)        ;; good alternative: M-.
    ("C-h B" . embark-bindings)) ;; alternative for `describe-bindings'
 
   :init

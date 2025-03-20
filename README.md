@@ -61,7 +61,7 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - `projectile`(`-ripgrep`): project management, prefixed to `C-c p`, ripgrep by `C-c p s r`
 - `magit`: git if it was awesome. `C-x g` to get started.
 - `git-gutter-fringe`: show details on lines added/modified/deleted on the left fringe of the buffer
-- `avy`: `C-:` to move cursor anywhere on the screen using hotkeys
+- `avy`: `C-;` to move cursor anywhere on the screen using hotkeys
 - `switch-window`: `C-x o` brings a hotkey for each window if you have over 2 windows open in the same frame
 - `undo-tree`: treat undo history as a tree. check it out with `C-x u`
 - `nerd-icons`: for compatibility with doom-modeline below
