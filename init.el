@@ -186,7 +186,7 @@
 ;      use-package-expand-minimally t)
 
 (use-package smartparens
-  :hook (prog-mode text-mode markdown-mode)
+  :hook (prog-mode text-mode markdown-mode minibuffer-mode)
   :config
   (require 'smartparens-config))
 
