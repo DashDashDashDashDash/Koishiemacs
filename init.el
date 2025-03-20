@@ -67,6 +67,12 @@
 (setq auto-save-file-name-transforms
       `((".*" ,(concat user-emacs-directory "autosaves"))))
 
+; reuse current dired buffer by pressing a
+(put 'dired-find-alternate-file 'disabled nil)
+
+(add-hook 'after-save-hook
+          'executable-make-buffer-file-executable-if-script-p)
+
 (add-hook 'text-mode-hook 'display-line-numbers-mode)
 (add-hook 'prog-mode-hook 'display-line-numbers-mode)
 
