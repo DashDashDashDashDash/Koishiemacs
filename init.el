@@ -136,6 +136,12 @@
 ; conditional stuff for system types
 
 ; thanks, prelude!
+; windows
+(when (file-exists-p "C:/Program Files/Git/bin")
+  (add-to-list 'exec-path "C:/Program Files/Git/bin")
+  (add-to-list 'exec-path "C:/Program Files/Git/mingw64/bin")
+  (setenv "PATH" (concat "C:/Program Files/Git/bin;" "C:/Program Files/Git/mingw64/bin;" (getenv "PATH"))))
+
 ; wsl
 (when (and (eq system-type 'gnu/linux) (getenv "WSLENV"))
   (let ((cmd-exe "/mnt/c/Windows/System32/cmd.exe")
