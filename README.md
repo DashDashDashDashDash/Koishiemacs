@@ -76,6 +76,7 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
   - in particular, replaces `C-s`. `C-S-s` for a wider search on all open buffers.
 - `marginalia`: adds useful annotations to anything completion-related
 - `embark`: provides a "context menu" to whatever is at point with `C-.`
+- `consult-embark`: because we're told so
 - `lsp-*`: language server protocol -- turns emacs into a recognizable ide
 - `dap-mode`: debugging, goes hand-in-hand with the lsp package above
 - `flycheck`: syntax/error checking
