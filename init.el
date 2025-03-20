@@ -324,7 +324,7 @@
   :config
   (global-undo-tree-mode t)
   (setq undo-tree-auto-save-history t)
-  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo"))))
+  (setq undo-tree-history-directory-alist `(("." . ,(concat user-emacs-directory "undo/")))))
 
 (defconst nerd-font-installed (expand-file-name "nerd" user-emacs-directory))
 (use-package nerd-icons
