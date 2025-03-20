@@ -190,7 +190,10 @@
 (use-package smartparens
   :hook (prog-mode text-mode markdown-mode minibuffer-mode)
   :config
-  (require 'smartparens-config))
+  (require 'smartparens-config)
+  ; thanks, https://github.com/zcjava/emacs.d_configuration !
+  (sp-local-pair 'elisp-mode "'" nil :actions nil)
+  (sp-local-pair 'elisp-mode "`" nil :actions nil))
 
 ;; Enable Vertico.
 (use-package vertico
