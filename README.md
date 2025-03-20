@@ -53,6 +53,10 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 
 - smartparens ignoring ' and ` on elisp files
 
+## Features borrowed from [magnars' .emacs.d](https://github.com/magnars/.emacs.d)
+
+- magit expands sections by default
+
 ## Details on the packages used
 
 - `smartparens`: tries to be smart about pairs (like `()`, `[]`, `""`, etc)

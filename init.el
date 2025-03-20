@@ -322,8 +322,14 @@
 
 (use-package magit
   :config
-  (setq magit-diff-hide-trailing-cr-characters t)
-  (setq git-commit-summary-max-length 50))
+  (setq magit-diff-hide-trailing-cr-characters t
+        git-commit-summary-max-length 50
+        magit-section-initial-visibility-alist
+        '((untracked . show)
+          (unstaged . show)
+          (unpushed . show)
+          (unpulled . show)
+          (stashes . show))))
 
 (use-package git-gutter-fringe
   :config
