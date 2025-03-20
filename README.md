@@ -49,6 +49,10 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - `windmove-mode` bound to `C-M-<arrow keys>` for easier frame navigation
 - lots of QoL changes
 
+## Features borrowed from [zcjava's .emacs.d](https://github.com/zcjava/emacs.d_configuration)
+
+- smartparens ignoring ' and ` on elisp files
+
 ## Details on the packages used
 
 - `smartparens`: tries to be smart about pairs (like `()`, `[]`, `""`, etc)

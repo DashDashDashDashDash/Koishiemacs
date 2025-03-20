@@ -200,7 +200,12 @@
   (require 'smartparens-config)
   ; thanks, https://github.com/zcjava/emacs.d_configuration !
   (sp-local-pair 'elisp-mode "'" nil :actions nil)
-  (sp-local-pair 'elisp-mode "`" nil :actions nil))
+  (sp-local-pair 'elisp-mode "`" nil :actions nil)
+  :bind
+  ("C-M-a" . 'sp-beginning-of-sexp)
+  ("C-M-e" . 'sp-end-of-sexp)
+  ("C-<down>" . 'sp-down-sexp)
+  ("C-<up>" . 'sp-backward-up-sexp))
 
 ;; Enable Vertico.
 (use-package vertico
