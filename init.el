@@ -92,6 +92,7 @@
   (concat
     "-o ControlPath=/tmp/%%C"))
 
+(require 'org)
 (add-to-list 'org-modules 'org-tempo t)
 
 ; thanks, witchmacs!
