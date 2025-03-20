@@ -86,6 +86,8 @@
   (concat
     "-o ControlPath=/tmp/%%C"))
 
+(add-to-list 'org-modules 'org-tempo t)
+
 ; thanks, witchmacs!
 (defalias 'yes-or-no-p 'y-or-n-p)
 
