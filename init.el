@@ -91,6 +91,16 @@
 
 (require 'org)
 (add-to-list 'org-modules 'org-tempo t)
+(setq org-hide-emphasis-markers t)
+
+; https://stackoverflow.com/questions/10969617/hiding-markup-elements-in-org-mode
+(defun org-toggle-emphasis ()
+  "Toggle hiding/showing of org emphasize markers."
+  (interactive)
+  (if org-hide-emphasis-markers
+      (set-variable 'org-hide-emphasis-markers nil)
+    (set-variable 'org-hide-emphasis-markers t)))
+(define-key org-mode-map (kbd "C-c e") 'org-toggle-emphasis)
 
 ; thanks, witchmacs!
 (defalias 'yes-or-no-p 'y-or-n-p)
