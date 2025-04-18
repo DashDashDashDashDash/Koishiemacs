@@ -233,6 +233,12 @@
   ("C-<down>" . 'sp-down-sexp)
   ("C-<up>" . 'sp-backward-up-sexp))
 
+(use-package origami
+  :config
+  (global-origami-mode)
+  :bind
+  ("C-c o" . 'origami-toggle-node))
+
 ;; Enable Vertico.
 (use-package vertico
   ;; :custom
@@ -470,6 +476,9 @@
       orig-result)))
 (advice-add 'lsp-resolve-final-command :around #'lsp-booster--advice-final-command)
 
+(use-package lsp-origami
+  :config
+  (add-hook 'lsp-after-open-hook #'lsp-origami-try-enable))
 
 (use-package treemacs
   :functions
