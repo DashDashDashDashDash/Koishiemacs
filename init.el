@@ -210,10 +210,11 @@
 ; now, package stuff
 (require 'package)
 
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
+
 ; use-package is installed by default on emacs 29
 (unless (package-installed-p 'vertico)
   (package-install 'use-package)
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
   (package-refresh-contents))
 (require 'use-package-ensure)
 (setq use-package-always-ensure t)
