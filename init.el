@@ -61,9 +61,11 @@
   (setq backup-directory-alist
         `((".*" . ,(concat user-emacs-directory "backups")))))
 ; thanks as well, prelude!
+(defconst autosave-folder (expand-file-name "autosaves/" user-emacs-directory))
+(unless (file-exists-p autosave-folder)
+  (make-directory autosave-folder))
 (setq auto-save-file-name-transforms
-      `((".*" ,(concat user-emacs-directory "autosaves"))))
-
+      `(("\\(.+/\\)*\\(.*?\\)" ,(expand-file-name "autosaves/\\" user-emacs-directory))))
 ; reuse current dired buffer by pressing a
 (put 'dired-find-alternate-file 'disabled nil)
 
