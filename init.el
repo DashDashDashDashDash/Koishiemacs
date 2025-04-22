@@ -193,7 +193,7 @@
 ;;         (tsx "https://github.com/tree-sitter/tree-sitter-typescript" "master" "tsx/src")
 ;;         (typescript "https://github.com/tree-sitter/tree-sitter-typescript" "master" "typescript/src")
 ;;         (yaml "https://github.com/ikatyang/tree-sitter-yaml")
-;;         (lua "https://github.com/tree-sitter-grammars/tree-sitter-lua"))
+;;         (lua "https://github.com/tree-sitter-grammars/tree-sitter-lua")))
 
 ;; (mapc #'treesit-install-language-grammar (mapcar #'car treesit-language-source-alist))
 
