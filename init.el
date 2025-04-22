@@ -132,8 +132,8 @@
 (bind-key "C-x M-e" 'eval-and-replace)
 
 ; keybinds
-(bind-key "M-n" 'scroll-up)
-(bind-key "M-p" 'scroll-down)
+(bind-key "M-n" 'pixel-scroll-interpolate-down)
+(bind-key "M-p" 'pixel-scroll-interpolate-up)
 (bind-key (kbd "<mouse-movement>") 'ignore)
 (bind-key (kbd "<tab-bar> <mouse-movement>") 'ignore)
 
