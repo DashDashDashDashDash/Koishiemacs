@@ -372,7 +372,8 @@
   (define-fringe-bitmap 'git-gutter-fr:deleted [128 192 224 240]
     nil nil 'bottom)
   :hook
-  (text-mode . git-gutter-mode))
+  (text-mode . git-gutter-mode)
+  (org-mode . git-gutter-mode))
 
 (use-package avy
   :bind ("C-;" . 'avy-goto-char)
