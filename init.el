@@ -65,7 +65,7 @@
 (unless (file-exists-p autosave-folder)
   (make-directory autosave-folder))
 (setq auto-save-file-name-transforms
-      `(("\\(.+/\\)*\\(.*?\\)" ,(expand-file-name "autosaves/\\" user-emacs-directory))))
+      `(("\\(.+/\\)*\\(.*?\\)" ,(expand-file-name "autosaves/" user-emacs-directory))))
 ; reuse current dired buffer by pressing a
 (put 'dired-find-alternate-file 'disabled nil)
 
