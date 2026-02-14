@@ -94,6 +94,7 @@
 (require 'org)
 (add-to-list 'org-modules 'org-tempo t)
 (setq org-hide-emphasis-markers t)
+(add-hook 'org-mode-hook 'org-indent-mode)
 
 ; https://stackoverflow.com/questions/10969617/hiding-markup-elements-in-org-mode
 (defun org-toggle-emphasis ()
