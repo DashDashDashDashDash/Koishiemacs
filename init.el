@@ -417,7 +417,7 @@
   (setq lsp-warn-no-matched-clients nil)
 ;  (setq lsp-idle-delay 0.1)
   :hook (
-     (prog-mode . lsp)
+    ;(prog-mode . lsp)
     ;(XXX-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
