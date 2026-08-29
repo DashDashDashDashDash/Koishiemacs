@@ -6,7 +6,7 @@
 
 These are just my emacs configuration files. It's only really meant for me to sync my config across places with relative ease.
 
-My mindset when messing around was that I wanted something that didn't interrupt my windows habits, while keeping all of Emacs' goodies. Tested on Emacs 30.1.
+My mindset when messing around was that I wanted something that didn't interrupt my windows habits, while keeping all of Emacs' goodies. Tested on Emacs 31.1.
 
 Some settings are bound to change, since I still haven't used the editor long enough.
 
@@ -77,6 +77,7 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 - `nerd-icons`: for compatibility with doom-modeline below
 - `nerd-icons-dired`: use icons on dired (`C-x d`)
 - `doom-modeline`: doom emacs' modeline
+- `org-download`: drag and drop images onto an org file to insert them
 - `treemacs`: a tree view of a directory in emacs
 - `consult`: replaces lots of search-related and other features with richer menus
   - in particular, replaces `C-s`. `C-S-s` for a wider search on all open buffers.
