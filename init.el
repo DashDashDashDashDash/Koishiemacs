@@ -342,6 +342,12 @@
    '(tab-bar ((t (:weight bold))))
    '(tab-line-tab-special ((t nil)))))
 
+(use-package org-download
+  :init
+  (require 'org-download)
+  :config
+  (add-hook 'dired-mode-hook 'org-download-enable))
+
 (use-package projectile
   :init
   (projectile-mode t)
