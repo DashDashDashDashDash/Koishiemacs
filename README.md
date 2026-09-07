@@ -61,7 +61,8 @@ If you're using smaller fonts, or if you're on a smaller screen, you might want 
 ## Details on the packages used
 
 - `smartparens`: tries to be smart about pairs (like `()`, `[]`, `""`, etc)
-- `origami`: code folding bound to `C-c o`
+- `kirigami`: code folding bound to `C-c z a` + more
+- `treesit-fold`: make kirigami work better on tree-sitter enabled buffers
 - `vertico`: provides completion to emacs commands on the minibuffer
 - `savehist`: "Persist history over Emacs restarts." from vertico
 - `orderless`: a different, more feature-rich completion style for use with vertico & co.

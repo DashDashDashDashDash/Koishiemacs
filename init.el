@@ -255,7 +255,26 @@
    ("C-c z m" . kirigami-close-folds)        ; Close all folds
    ("C-c z a" . kirigami-toggle-fold)))      ; Toggle fold at point
 
+(use-package treesit-fold
+  :commands (treesit-fold-close
+             treesit-fold-close-all
+             treesit-fold-open
+             treesit-fold-toggle
+             treesit-fold-open-all
+             treesit-fold-mode
+             global-treesit-fold-mode
+             treesit-fold-open-recursively
+             treesit-fold-line-comment-mode)
 
+  :custom
+  (treesit-fold-line-count-show t)
+  (treesit-fold-line-count-format " ▼")
+
+  :config
+  (set-face-attribute 'treesit-fold-replacement-face nil
+                      :foreground "#808080"
+                      :box nil
+                      :weight 'bold))
 
 ;; Enable Vertico.
 (use-package vertico
