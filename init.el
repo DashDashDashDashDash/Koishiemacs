@@ -236,11 +236,26 @@
   ("C-<down>" . 'sp-down-sexp)
   ("C-<up>" . 'sp-backward-up-sexp))
 
-(use-package origami
-  :config
-  (global-origami-mode)
+; https://www.jamescherti.com/emacs-the-definitive-guide-to-code-folding/
+(use-package kirigami
+  :commands (kirigami-open-fold
+             kirigami-open-fold-rec
+             kirigami-close-fold
+             kirigami-toggle-fold
+             kirigami-open-folds
+             kirigami-close-folds-except-current
+             kirigami-close-folds)
+
   :bind
-  ("C-c o" . 'origami-toggle-node))
+  ;; Vanilla Emacs keybindings
+  (("C-c z o" . kirigami-open-fold)          ; Open fold at point
+   ("C-c z O" . kirigami-open-fold-rec)      ; Open fold recursively
+   ("C-c z r" . kirigami-open-folds)         ; Open all folds
+   ("C-c z c" . kirigami-close-fold)         ; Close fold at point
+   ("C-c z m" . kirigami-close-folds)        ; Close all folds
+   ("C-c z a" . kirigami-toggle-fold)))      ; Toggle fold at point
+
+
 
 ;; Enable Vertico.
 (use-package vertico
@@ -485,10 +500,6 @@
           (cons "emacs-lsp-booster" orig-result))
       orig-result)))
 (advice-add 'lsp-resolve-final-command :around #'lsp-booster--advice-final-command)
-
-(use-package lsp-origami
-  :config
-  (add-hook 'lsp-after-open-hook #'lsp-origami-try-enable))
 
 (use-package treemacs
   :functions
